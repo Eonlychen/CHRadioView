@@ -28,6 +28,8 @@ typedef void(^CHRadioViewSelectedItemBlock) (NSString *title, NSString *imageNor
 
 /** 选中单元格 (默认0，item 0...) */
 @property (nonatomic) NSInteger selectItem;
+/** 一横排展示个数 （默认为3）*/
+@property (nonatomic, assign) NSInteger rowShowCount;
 
 /** 选中item背景颜色 (默认clear)*/
 @property (nonatomic, strong) UIColor *backgroundColorSelected;
@@ -43,8 +45,6 @@ typedef void(^CHRadioViewSelectedItemBlock) (NSString *title, NSString *imageNor
 @property (nonatomic) CGFloat titleFontNormal;
 
 
-/** 一横排展示个数 （默认为3）*/
-@property (nonatomic, assign) NSInteger rowShowCount;
 
 
 /**

@@ -19,8 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    CHRadioView *radioView = [CHRadioView showRadioViewWithTitles: @[@"第一奖杯",@"第二奖杯",@"第三奖杯"] imagesNormal: @[@"cup-first",@"cup-second",@"cup-third"] imagesSelected:nil frame:CGRectMake(0, 200, CGRectGetWidth(self.view.frame), 80)];
-    
+    CHRadioView *radioView = [CHRadioView showRadioViewWithTitles: @[@"第一奖杯",@"第二奖杯",@"第三奖杯",@"第二二奖杯"] imagesNormal: @[@"cup-first",@"cup-second",@"cup-third",@"cup-second"] imagesSelected:nil frame:CGRectMake(0, 200, CGRectGetWidth(self.view.frame), 80)];
+    radioView.selectItem = 2;
     radioView.backgroundColorNormal = UIColor.yellowColor;
     radioView.backgroundColorSelected = UIColor.redColor;
     radioView.titleFontNormal = 12;

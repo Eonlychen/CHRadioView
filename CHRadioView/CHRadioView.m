@@ -47,9 +47,16 @@
 - (void)setDefaultSetting {
     // 默认选中第一个
     [self setSelectItem:0];
+
     // 默认一横排展示个数
     self.rowShowCount = 3;
     
+    self.titleFontSelected = 14;
+    self.titleFontNormal = 14;
+    self.backgroundColorSelected = UIColor.clearColor;
+    self.backgroundColorNormal = UIColor.clearColor;
+    self.titleColorSelected = UIColor.blueColor;
+    self.titleColorNormal = UIColor.darkGrayColor;
 }
 
 
@@ -67,6 +74,9 @@
     }
 }
 #pragma mark -- UICollectionViewDataSource,UICollectionViewDelegate
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {\
+    return 1;
+}
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.dataArray.count;
 }
@@ -75,14 +85,15 @@
     CCRadioModel *model = self.dataArray[indexPath.row];
     cell.titleLabel.text = model.title;
     if (model.selected) {
-        cell.backgroundColor = self.backgroundColorSelected?:UIColor.clearColor;
-        cell.titleLabel.font = [UIFont systemFontOfSize:self.titleFontSelected?:14];
-        cell.titleLabel.textColor = self.titleColorSelected?:UIColor.blueColor;
+        cell.backgroundColor = self.backgroundColorSelected;
+        cell.titleLabel.font = [UIFont systemFontOfSize:self.titleFontSelected];
+        cell.titleLabel.textColor = self.titleColorSelected;
         cell.imageView.image  = [UIImage imageNamed:model.imageSelected];
+        [collectionView selectItemAtIndexPath:indexPath animated:true scrollPosition:(UICollectionViewScrollPositionCenteredHorizontally)];
     }else {
-        cell.backgroundColor = self.backgroundColorNormal?:UIColor.clearColor;
-        cell.titleLabel.font = [UIFont systemFontOfSize:self.titleFontNormal?:14];
-        cell.titleLabel.textColor = self.titleColorNormal?:UIColor.darkGrayColor;
+        cell.backgroundColor = self.backgroundColorNormal;
+        cell.titleLabel.font = [UIFont systemFontOfSize:self.titleFontNormal];
+        cell.titleLabel.textColor = self.titleColorNormal;
         cell.imageView.image  = [UIImage imageNamed:model.imageNormal];
     }
     if (self.configCellBlock) {
