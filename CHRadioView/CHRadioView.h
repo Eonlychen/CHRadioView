@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef CGSize(^CHRadioViewItemSizeBlock) (UICollectionViewLayout *layout, NSIndexPath *indexPath);
 typedef void(^CHRadioViewConfigCellBlock) (CHRadioCell *cell,CCRadioModel *model, NSIndexPath *indexPath);
-typedef void(^CHRadioViewSelectedItemBlock) (CCRadioModel *model, NSIndexPath *indexPath);
+typedef void(^CHRadioViewSelectedItemBlock) (NSString *title, NSString *imageNormal, NSString *imageSelected, NSIndexPath *indexPath);
 
 @interface CHRadioView : UIView
 

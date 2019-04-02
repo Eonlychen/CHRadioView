@@ -32,8 +32,8 @@
 //    [radioView setItemSizeBlock:^CGSize(UICollectionViewLayout * _Nonnull layout, NSIndexPath * _Nonnull indexPath) {
 //        return CGSizeMake(100, 60);
 //    }];
-    [radioView setSelectedItemBlock:^(CCRadioModel * _Nonnull model, NSIndexPath * _Nonnull indexPath) {
-        
+    [radioView setSelectedItemBlock:^(NSString * _Nonnull title, NSString * _Nonnull imageNormal, NSString * _Nonnull imageSelected, NSIndexPath * _Nonnull indexPath) {
+        NSLog(@"title:%@ ,imageNormal:%@,imageSelected:%@",title,imageNormal,imageSelected);
     }];
     
     [self.view addSubview:radioView];

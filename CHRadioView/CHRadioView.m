@@ -94,8 +94,11 @@
     [collectionView deselectItemAtIndexPath:indexPath animated:true];
     [self setSelectItem:indexPath.row];
     CCRadioModel *model = self.dataArray[indexPath.row];
+    NSString *title = model.title;
+    NSString *imageNormal = model.imageNormal;
+    NSString *imageSelected = model.imageSelected;
     if (self.selectedItemBlock) {
-        self.selectedItemBlock(model, indexPath);
+        self.selectedItemBlock(title,imageNormal,imageSelected, indexPath);
     }
 }
 
